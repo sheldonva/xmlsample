@@ -1,0 +1,71 @@
+<xml id="act2" style="display:none;">
+
+   <students>
+			<student id="2010100048">
+					<name>Juan Dela Cruz</name>
+					<birthday>January 25, 1984</birthday>
+					<course>BSIT</course>
+			</student>
+			
+			<student id="2010100049">
+					<name>Armando Tiongson</name>
+					<birthday>April 2, 1984</birthday>
+					<course>BSIT</course>
+			</student>
+			
+			<student id="2010100050">
+					<name>Oliver Borlongan</name>
+					<birthday>November 25, 1984</birthday>
+					<course>BSIT</course>
+			</student>
+			
+			<student id="2010100051">
+					<name>John Ramos</name>
+					<birthday>January 25, 1984</birthday>
+					<course>BSIT</course>
+			</student>
+			
+			<student id="2010100052">
+					<name>Ramon Ramos</name>
+					<birthday>January 24, 1984</birthday>
+					<course>BLIS</course>
+			</student>
+	   </students>
+
+</xml>
+
+
+<html>
+<head>
+<title>Test</title>
+	
+	<script>
+	var i,z,x,y;
+    d = document;
+		
+		function getData(){
+		xml = d.getElementById("act2");
+		std = xml.getElementsByTagName("student");
+		d.write("<h1>Sample Fetch Data For Demo</h1> <br><br>");
+			
+			for ( z = 0; z < std.length; z++){ 
+				var x = std[z].childNodes;
+				for (i = 0; i < x.length; i++) {
+				y = x[i];
+				if (y.nodeType == 1) {
+				d.write("<span class='title'>" + y.nodeName + ":" + y.firstChild.nodeValue + "</span><img src ='https://www.littledogsocialmedia.com/wp-content/uploads/2023/10/6.png' width='50'/><br />");
+				}
+    }
+    d.write("<br/>");
+    }
+}
+    
+    </script>
+
+</head>
+
+	<body onload="getData();">
+
+	</body>
+
+</html>
